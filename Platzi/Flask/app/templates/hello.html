@@ -9,7 +9,7 @@
 
 {% block content %}
     {% if username %}
-        <h1>Bienvenido {{ username | capitalize }}</h1>
+        <h1>Bienvenido, {{ username | capitalize }}</h1>
     {% endif %}
     {% if user_ip %}
         <h3>Your IP is {{ user_ip }}</h3>
@@ -17,13 +17,6 @@
         <a href="{{ url_for('index') }}">Ir a inicio</a>
     {% endif %}
 
-    <div class="container">
-        <form action="{{ url_for('hello') }}" method="POST">
-            <!-- {{ login_form.username }}
-            {{ login_form.username.label }} -->
-            {{ wtf.quick_form(login_form) }}
-        </form>
-    </div>
 
     <ul>
         {% for todo in todos %}
